@@ -1,0 +1,48 @@
+{
+  "name": "@ericrovell/practical-astronomy-js",
+  "version": "0.1.0",
+  "description": "mplementing the routines in \"Practical Astronomy on Your Calculator\", by Peter Duffett-Smith using JS",
+  "main": "index.js",
+  "module": "index.mjs",
+  "scripts": {
+    "lint": "eslint src/**/*.ts tests/**/*.ts",
+    "check-types": "tsc --noEmit true",
+    "test": "jest --config ./jest.config.json --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EricRovell/practical-astronomy-js.git"
+  },
+  "keywords": [
+    "math",
+    "astronomy"
+  ],
+  "author": "Eric Rovell",
+  "types": "index.d.ts",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^27.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.29.2",
+    "@typescript-eslint/parser": "^4.29.2",
+    "eslint": "^7.32.0",
+    "jest": "^27.0.6",
+    "ts-jest": "^27.0.5",
+    "tslib": "^2.3.1",
+    "typescript": "^4.3.5"
+  },
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js",
+      "default": "./index.mjs"
+    }
+  },
+  "homepage": "https://github.com/EricRovell/practical-astronomy-js#readme",
+  "directories": {
+    "test": "tests"
+  },
+  "engines": {
+    "node": ">=14.0"
+  },
+  "sideEffects": false
+}
