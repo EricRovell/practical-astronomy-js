@@ -1,5 +1,6 @@
 import { calcEaster } from "@/chapters/01-time/the-date-of-easter";
 import { convertDateToDayNumber } from "@/chapters/01-time/converting-the-date-to-the-day-number";
+import { convertJulianToGreenwichDate } from "@/chapters/01-time/julian-to-greenwich-date";
 
 describe("Chapter 01: Time", () => {
 	it("Calculates the date of Easter", () => {
@@ -16,5 +17,8 @@ describe("Chapter 01: Time", () => {
 		expect(convertDateToDayNumber({ year: 2016, month: 1 })).toBe(0);
 		expect(convertDateToDayNumber({ year: 2027, month: 9 })).toBe(243);
 		expect(convertDateToDayNumber({ year: 2028, month: 9 })).toBe(244);
+	});
+	it("Calculates the number of days for the date", () => {
+		expect(convertJulianToGreenwichDate(2455002.25)).toEqual({ year: 2009, month: 6, day: 19.75 });
 	});
 });
