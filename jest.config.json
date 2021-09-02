@@ -4,6 +4,8 @@
     "^.+\\.ts$": "ts-jest"
   },
   "moduleNameMapper": {
+    "^@helpers$": "<rootDir>/src/helpers/index.ts",
+    "^@helpers/(.*)": "<rootDir>/src/helpers/$1",
     "^@/(.*)": "<rootDir>/src/$1"
   },
   "testEnvironment": "node"

@@ -10,6 +10,8 @@
     "outDir": "./dist",
     "baseUrl": "./src",
     "paths": {
+      "@helpers/*": [ "./helpers/*" ],
+      "@helpers": [ "./helpers/index.ts" ],
       "@/*": [ "./*" ]
     }
   },
