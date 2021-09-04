@@ -7,7 +7,7 @@ export interface Time {
 }
 
 /**
- * Convert time to decimal form.
+ * Convert time in H:M:S format to decimal hours.
  */
 export function convertTimeToDecimalHours({ hours = 0, minutes = 0, seconds = 0 }: Partial<Time>): number {
 	const deciSeconds = Math.abs(seconds) / 3600;
@@ -15,6 +15,9 @@ export function convertTimeToDecimalHours({ hours = 0, minutes = 0, seconds = 0 
 	return round(hours + deciMinutes + deciSeconds, 8);
 }
 
+/**
+ * Convert decimal hours to time in H:M:S format.
+ */
 export function convertDecimalHoursToTime(time: number): Partial<Time> {
 	const decimalHours = Math.abs(time);
 	const totalSeconds = decimalHours * 3600;
