@@ -2,7 +2,10 @@ import { calcEaster } from "@/chapters/01-time/the-date-of-easter";
 import { convertDateToDayNumber } from "@/chapters/01-time/converting-the-date-to-the-day-number";
 import { convertJulianToGreenwichDate } from "@/chapters/01-time/julian-to-greenwich-date";
 import { getDayWeekName } from "@/chapters/01-time/get-name-of-the-day-of-the-week";
-import { convertTimeToDecimalHours } from "@/chapters/01-time/converting-time-to-decimal-hours";
+import { 
+	convertTimeToDecimalHours,
+	convertDecimalHoursToTime 
+} from "@/chapters/01-time/converting-time-to-decimal-hours";
 
 describe("Chapter 01: Time", () => {
 	it("Calculates the date of Easter", () => {
@@ -28,5 +31,8 @@ describe("Chapter 01: Time", () => {
 	});
 	it("Converts time to decimal form", () => {
 		expect(convertTimeToDecimalHours({ hours: 18, minutes: 31, seconds: 27 })).toBe(18.52416667);
+	});
+	it("Converts decimal hours to time", () => {
+		expect(convertDecimalHoursToTime(18.52416667)).toEqual({ hours: 18, minutes: 31, seconds: 27 });
 	});
 });
