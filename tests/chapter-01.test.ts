@@ -1,12 +1,12 @@
-import { calcEaster } from "@/chapters/01-time/the-date-of-easter";
-import { convertDateToDayNumber } from "@/chapters/01-time/converting-the-date-to-the-day-number";
-import { convertJulianToGreenwichDate } from "@/chapters/01-time/julian-to-greenwich-date";
-import { getDayWeekName } from "@/chapters/01-time/get-name-of-the-day-of-the-week";
-import { 
+import {
+	calcEaster,
+	convertDateToDayNumber,
+	convertJulianToGreenwichDate,
 	convertTimeToDecimalHours,
-	convertDecimalHoursToTime 
-} from "@/chapters/01-time/converting-time-to-decimal-hours";
-import { convertCivilTimeToUniversal } from "@/chapters/01-time/civil-time-to-universal";
+	convertDecimalHoursToTime,
+	getDayWeekName,
+	convertCivilTimeToUniversal
+} from "@time";
 
 describe("Chapter 01: Time", () => {
 	it("Calculates the date of Easter", () => {
