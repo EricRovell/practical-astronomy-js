@@ -1,10 +1,5 @@
 import { round } from "@helpers/math";
-
-export interface Time {
-	hours: number;
-	minutes: number;
-	seconds: number;
-}
+import type { Time } from "../../types";
 
 /**
  * Convert time in H:M:S format to decimal hours.
@@ -18,7 +13,7 @@ export function convertTimeToDecimalHours({ hours = 0, minutes = 0, seconds = 0 
 /**
  * Convert decimal hours to time in H:M:S format.
  */
-export function convertDecimalHoursToTime(time: number): Partial<Time> {
+export function convertDecimalHoursToTime(time: number): Time {
 	const decimalHours = Math.abs(time);
 	const totalSeconds = decimalHours * 3600;
 	const seconds = round(totalSeconds % 60, 2);

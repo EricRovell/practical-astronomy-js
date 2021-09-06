@@ -4,7 +4,7 @@ import type { Date } from "../../types";
 /**
  * Converts the date to the day number.
  */
-export function convertDateToDayNumber({ year, month = 1, day = 0 }: Date): number {
+export function convertDateToDayNumber({ year = 2010, month = 1, day = 0 }: Partial<Date>): number {
 	const leapVar = checkLeapYear(year) ? 62 : 63;
 
 	if (month > 2) {

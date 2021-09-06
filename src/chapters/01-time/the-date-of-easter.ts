@@ -1,13 +1,10 @@
-interface Date {
-	day: number;
-	month: number;
-}
+import type { Date } from "../../types";
 
 /**
  * Calculates the western [date of Easter](https://en.wikipedia.org/wiki/List_of_dates_for_Easter)
  * for specified year.
  */
-export function calcEaster(year: number): Date {
+export function calcEaster(year: number): Pick<Date, "month" | "day"> {
 	const a = year % 19;
 	const b = Math.floor(year / 100);
 	const c = year % 100;
