@@ -1,5 +1,8 @@
 import type { Date } from "../../types";
 
+/**
+ * Convert Julian Date to Greenwich Calendar Date.
+ */
 export function convertJulianToGreenwichDate(date: number): Date {
 	const i = Math.trunc(date + 0.5);
 	const f = (date + 0.5) - i;
@@ -32,4 +35,22 @@ export function convertJulianToGreenwichDate(date: number): Date {
 		month,
 		day
 	};
+}
+
+/**
+ * Convert Greenwich Calendar Date to Julian Date.
+ */
+export function convertGreenwichToJulianDate({ year, month, day }: Date): number {
+	const yd = (month < 3) ? year - 1 : year;
+	const md = (month < 3) ? month + 12: month;
+	const a = Math.trunc(yd / 100);
+	const b = ((year > 1582) || (year === 1582 && month > 10) || (year === 1582 && month === 10 && day >= 15))
+		? 2 - a + Math.trunc(a / 4)
+		: 0;
+	const c = (yd < 0)
+		? Math.trunc((365.25 * yd) - 0.75)
+		: Math.trunc(365.25 * yd);
+	const d = Math.trunc(30.6001 * (md + 1));
+
+	return b + c + d + day + 1720994.5;
 }

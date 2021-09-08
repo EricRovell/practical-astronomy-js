@@ -2,6 +2,7 @@ import {
 	calcEaster,
 	convertDateToDayNumber,
 	convertJulianToGreenwichDate,
+	convertGreenwichToJulianDate,
 	convertTimeToDecimalHours,
 	convertDecimalHoursToTime,
 	getDayWeekName,
@@ -27,6 +28,9 @@ describe("Chapter 01: Time", () => {
 	it("Calculates the number of days for the date", () => {
 		expect(convertJulianToGreenwichDate(2455002.25)).toEqual({ year: 2009, month: 6, day: 19.75 });
 	});
+	it("Convert Greenwich calendar date to Julian", () => {
+		expect(convertGreenwichToJulianDate({ year: 2009, month: 6, day: 19.75 })).toBe(2455002.25);
+	});
 	it("Determines the name of the day of the week", () => {
 		expect(getDayWeekName(2455001.5)).toBe(5);
 	});
@@ -36,7 +40,7 @@ describe("Chapter 01: Time", () => {
 	it("Converts decimal hours to time", () => {
 		expect(convertDecimalHoursToTime(18.52416667)).toEqual({ hours: 18, minutes: 31, seconds: 27 });
 	});
-	it("Converts Local Civil Time to Universal", () => {
+/* 	it("Converts Local Civil Time to Universal", () => {
 		expect(convertCivilTimeToUniversal({
 			year: 2013,
 			month: 7,
@@ -54,5 +58,5 @@ describe("Chapter 01: Time", () => {
 			minutes: 37,
 			seconds: 0
 		});
-	});
+	}); */
 });
