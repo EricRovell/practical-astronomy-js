@@ -40,7 +40,7 @@ describe("Chapter 01: Time", () => {
 	it("Converts decimal hours to time", () => {
 		expect(convertDecimalHoursToTime(18.52416667)).toEqual({ hours: 18, minutes: 31, seconds: 27 });
 	});
-/* 	it("Converts Local Civil Time to Universal", () => {
+	it("Converts Local Civil Time to Universal", () => {
 		expect(convertCivilTimeToUniversal({
 			year: 2013,
 			month: 7,
@@ -58,5 +58,5 @@ describe("Chapter 01: Time", () => {
 			minutes: 37,
 			seconds: 0
 		});
-	}); */
+	});
 });
