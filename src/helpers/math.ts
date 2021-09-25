@@ -23,3 +23,10 @@ export function clamp(number: number, min = 0, max = 1): number {
 			? number
 			: min;
 }
+
+/**
+ * Reduces to the range of [ 0; range ].
+ */
+export function reduceToRange(value: number, range = 24) {
+	return value - range * Math.trunc(value / range);
+}
