@@ -1,5 +1,6 @@
 import { convertGreenwichToJulianDate } from "./julian-to-greenwich-date";
 import { convertTimeToDecimalHours, convertDecimalHoursToTime } from "./converting-time-to-decimal-hours";
+import { reduceToRange } from "@helpers/math";
 import type { UT, GT, Time } from "../../types";
 
 /**
@@ -9,12 +10,10 @@ export function convertUTtoGST(date: UT): Time {
 	const jd = convertGreenwichToJulianDate(date);
 	const s = jd - 2451545;
 	const t = s / 36525;
-	let t0 = 6.697374558 + 2400.051336 * t + 0.000025862 * t ** 2;
-	t0 -= 24 * Math.trunc(t0 / 24);
+	const t0 = reduceToRange(6.697374558 + 2400.051336 * t + 0.000025862 * t ** 2)
 	const UT = convertTimeToDecimalHours(date);
 	const A = UT * 1.002737909;
-	let GST = t0 + A;
-	GST -= 24 * Math.trunc(GST / 24);
+	const GST = reduceToRange(t0 + A);
 
 	return convertDecimalHoursToTime(GST);
 }
@@ -29,9 +28,8 @@ function convertGSTtoUTDecimal(date: GT): number {
 	let t0 = 6.697374558 + 2400.051336 * t + 0.000025862 * t ** 2;
 	t0 -= 24 * Math.trunc(t0 / 24);
 	const GST = convertTimeToDecimalHours(date);
-	const A = GST - t0;
-	const B = A - 24 * Math.trunc(A / 24);
-	const UT = B * 0.9972695663;
+	const A = reduceToRange(GST - t0);
+	const UT = A * 0.9972695663;
 
 	if (UT < 0.065574) {
 		console.warn("It may not be the desired conversion (UT -> GST).");
