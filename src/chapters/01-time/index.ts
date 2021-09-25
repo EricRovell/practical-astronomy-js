@@ -5,3 +5,4 @@ export { convertJulianToGreenwichDate, convertGreenwichToJulianDate } from "./ju
 export { calcEaster } from "./the-date-of-easter";
 export { convertCivilTimeToUniversal } from "./civil-time-to-universal";
 export { convertUTtoGST, convertGSTtoUT, checkGSTtoUT } from "./convert-ut-to-gst";
+export { convertGSTtoLST, convertLSTtoGST } from "./convert-gst-to-lst";

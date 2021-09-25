@@ -9,7 +9,9 @@ import {
 	convertCivilTimeToUniversal,
 	convertUTtoGST,
 	convertGSTtoUT,
-	checkGSTtoUT
+	checkGSTtoUT,
+	convertGSTtoLST,
+	convertLSTtoGST
 } from "@time";
 
 describe("Chapter 01: Time", () => {
@@ -56,5 +58,11 @@ describe("Chapter 01: Time", () => {
 			.toEqual({ hours: 14, minutes: 36, seconds: 51.67 });
 		expect(checkGSTtoUT({	year: 1980,	month: 4,	day: 22, hours: 4,	minutes: 40, seconds: 5.23 }))
 			.toEqual(true);
+	});
+	it("Converts GST to LST", () => {
+		expect(convertGSTtoLST({ hours: 4, minutes: 40, seconds: 5.23 }, -64)).toEqual({ hours: 0, minutes: 24, seconds: 5.23 })
+	});
+	it("Converts LST to GST", () => {
+		expect(convertLSTtoGST({ hours: 0, minutes: 24, seconds: 5.23 }, -64)).toEqual({ hours: 4, minutes: 40, seconds: 5.23 })
 	});
 });
