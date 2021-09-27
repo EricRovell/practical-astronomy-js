@@ -12,7 +12,7 @@
     "paths": {
       "@helpers/*": [ "./helpers/*" ],
       "@helpers": [ "./helpers/index.ts" ],
-      "@time": [ "./chapters/01-time/index.ts" ],
+      "@time": [ "./chapters/time/index.ts" ],
       "@/*": [ "./*" ]
     }
   },
