@@ -1,5 +1,5 @@
 export { convertDateToDayNumber } from "./convert-date-to-day-number";
-export { convertTimeToDecimalHours, convertDecimalHoursToTime } from "./converting-time-to-decimal-hours";
+export { convertTimeToDecimalHours, convertDecimalHoursToTime } from "./convert-time-and-decimal-hours";
 export { getDayWeekName } from "./get-name-of-the-day-of-the-week";
 export { convertJulianToGreenwichDate, convertGreenwichToJulianDate } from "./julian-to-greenwich-date";
 export { calcEaster } from "./the-date-of-easter";
