@@ -1,4 +1,4 @@
-import { convertDecimalHoursToTime, convertTimeToDecimalHours } from "@time";
+import { convertDecimalHoursToTime, convertTimeToDecimalHours } from "./convert-time-and-decimal-hours";
 import { reduceToRange } from "@helpers/math";
 import type { Time } from "../../types";
 
