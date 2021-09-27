@@ -3,6 +3,6 @@ export { convertTimeToDecimalHours, convertDecimalHoursToTime } from "./converti
 export { getDayWeekName } from "./get-name-of-the-day-of-the-week";
 export { convertJulianToGreenwichDate, convertGreenwichToJulianDate } from "./julian-to-greenwich-date";
 export { calcEaster } from "./the-date-of-easter";
-export { convertLCTToUT } from "./civil-time-to-universal";
+export { convertLCTToUT } from "./convert-lct-to-ut";
 export { convertUTtoGST, convertGSTtoUT, checkGSTtoUT } from "./convert-ut-to-gst";
 export { convertGSTtoLST, convertLSTtoGST } from "./convert-gst-to-lst";
