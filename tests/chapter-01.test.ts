@@ -6,7 +6,7 @@ import {
 	convertTimeToDecimalHours,
 	convertDecimalHoursToTime,
 	getDayWeekName,
-	convertCivilTimeToUniversal,
+	convertLCTToUT,
 	convertUTtoGST,
 	convertGSTtoUT,
 	checkGSTtoUT,
@@ -46,7 +46,7 @@ describe("Chapter 01: Time", () => {
 		expect(convertDecimalHoursToTime(18.52416667)).toEqual({ hours: 18, minutes: 31, seconds: 27 });
 	});
 	it("Converts Local Civil Time to Universal", () => {
-		expect(convertCivilTimeToUniversal({ year: 2013, month: 7, day: 1, hours: 3, minutes: 37, seconds: 0,	daylightSaving: 1, zoneCorrection: 4 }))
+		expect(convertLCTToUT({ year: 2013, month: 7, day: 1, hours: 3, minutes: 37, seconds: 0,	daylightSaving: 1, zoneCorrection: 4 }))
 			.toEqual({ year: 2013, month: 6, day: 30, hours: 22, minutes: 37, seconds: 0 });
 	});
 	it("Converts Universal Time (UT) to Greenwich Sidereal Time (GST)", () => {
