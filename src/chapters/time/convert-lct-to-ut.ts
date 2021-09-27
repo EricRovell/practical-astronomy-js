@@ -1,5 +1,5 @@
 import { convertDecimalHoursToTime, convertTimeToDecimalHours } from "./convert-time-and-decimal-hours";
-import { convertJulianToGreenwichDate, convertGreenwichToJulianDate } from "./julian-to-greenwich-date";
+import { convertJulianToGreenwichDate, convertGreenwichToJulianDate } from "./convert-jd-to-gd";
 import type { LCT, UT } from "../../types";
 
 /**
