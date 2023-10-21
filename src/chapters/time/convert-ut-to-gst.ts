@@ -1,6 +1,6 @@
-import { convertGreenwichToJulianDate } from "./convert-jd-to-gd";
+import { convertGreenwichToJulianDate } from "./convert-julian-to-greenwich-date";
 import { convertTimeToDecimalHours, convertDecimalHoursToTime } from "./convert-time-and-decimal-hours";
-import { reduceToRange } from "@helpers/math";
+import { reduceToRange } from "../../helpers";
 import type { UT, GT, Time } from "../../types";
 
 /**
@@ -55,6 +55,6 @@ export function convertGSTtoUT(date: GT): Time {
  * 
  * Returns `true` if is fine.
  */
-export function checkGSTtoUT(date: GT): Boolean {
+export function checkGSTtoUT(date: GT): boolean {
 	return convertGSTtoUTDecimal(date) > 0.065574;
 }

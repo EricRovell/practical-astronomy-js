@@ -1,4 +1,4 @@
-import { checkLeapYear } from "@helpers";
+import { checkLeapYear } from "../../helpers";
 import type { Date } from "../../types";
 
 /**

@@ -1,4 +1,5 @@
-import { checkLeapYear } from "@helpers";
+import { describe, expect, it } from "vitest";
+import { checkLeapYear } from "./leap-year";
 
 describe("Helpers", () => {
 	it("Checks for leap year", () => {

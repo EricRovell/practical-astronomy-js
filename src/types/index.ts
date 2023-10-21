@@ -29,3 +29,10 @@ export interface LCT extends UT {
 	daylightSaving: number;
 	zoneCorrection: number;
 }
+
+/**
+ * Defines a degree value.
+ */
+export interface Angle extends Pick<Time, "minutes" | "seconds"> {
+	degrees: number;
+}

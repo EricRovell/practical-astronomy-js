@@ -1,4 +1,4 @@
-import { round } from "@helpers/math";
+import { round } from "../../helpers";
 import type { Time } from "../../types";
 
 /**

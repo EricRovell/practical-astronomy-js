@@ -1,5 +1,5 @@
 import { convertDecimalHoursToTime, convertTimeToDecimalHours } from "./convert-time-and-decimal-hours";
-import { reduceToRange } from "@helpers/math";
+import { reduceToRange } from "../../helpers";
 import type { Time } from "../../types";
 
 /**
